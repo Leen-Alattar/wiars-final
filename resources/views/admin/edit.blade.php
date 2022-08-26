@@ -9,11 +9,11 @@
             @csrf
             @method('put')
           <div class="form-group">
-            <label for="name">Exam Name</label>
+            <label for="name">Name</label>
             <input type="text" class="form-control" name="name" value="{{$category->name}}">
           </div>
           <div class="form-group">
-            <label for="description">Exam Description</label>
+            <label for="description">Description</label>
             <input type="text" class="form-control" name="description" value="{{$category->description}}">
           </div>
           <div class="form-group">
