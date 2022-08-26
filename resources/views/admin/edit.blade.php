@@ -21,6 +21,10 @@
             <input type="text" class="form-control" name="icon" value="{{$category->icon}}">
           </div>
           <div class="form-group">
+            <label for="icon">color</label>
+            <input type="color" class="form-control" name="color" value="{{$category->color}}">
+          </div>
+          <div class="form-group">
             <label for="description">Doses</label>
             <select name="with_doses" class="form-control">
                 @if($category->with_doses == 1)

@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->String('name');
             $table->string('icon');
+            $table->string('color')->default('#FF580E');
             $table->boolean('with_doses');
             $table->string('description');
             $table->timestamps();

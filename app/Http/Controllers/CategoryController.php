@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FoundationRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -46,6 +47,7 @@ class CategoryController extends Controller
         Category::create([
             'name' => $request->name,
             'icon' => $request->icon,
+            'color'=> $request->color,
             'description' => $request->description,
             'with_doses'  =>$request->with_doses,
         ]);
@@ -89,6 +91,7 @@ class CategoryController extends Controller
         ->update([
             'name' => $request->name,
             'icon' => $request->icon,
+            'color' => $request->color,
             'description' => $request->description,
             'with_doses'  =>$request->with_doses,
         ]);
@@ -109,7 +112,18 @@ class CategoryController extends Controller
     }
     public function show_all_foundations(){
 
+        $user = Auth::user();
         $categorys = Category::all();
-        return view('interface.foundation', compact('categorys'));
+        return view('interface.foundation', compact('categorys','user'));
+    }
+    public function show_certificate(){
+        $user = Auth::user();
+        $vacine_status=  $user->is_vaccine;
+        if($vacine_status == 1){
+            return view('interface.certificate', compact('user'));
+        }else{
+            return view('interface.nocertificate', compact('user'));
+        }
+
     }
 }

@@ -257,7 +257,7 @@
 									text-align: center;
 									margin-top: 4rem;
 									color: #fff;">
-                                        DOCTORS</h1>
+                                    Foundations</h1>
                                 </div>
                             </div>
                         </div>
@@ -535,7 +535,7 @@
                                                                                     <ul class="nav nav-tabs elementkit-tab-nav  elementskit-fullwidth-tab"
                                                                                         role="tablist">
                                                                                 
-                                                                                        @for ($temp = 0; $temp < 4 && $categorysIndex < count($arr); $categorysIndex++, $temp++)
+                                                                                        @for ($temp = 0; $temp < 4 && $categorysIndex < count($categorys); $categorysIndex++, $temp++)
                                                                                             <li
                                                                                                 class="elementkit-nav-item elementor-repeater-item-cc8a59e">
                                                                                                 <a class="elementkit-nav-link   show top-pos"
@@ -556,11 +556,12 @@
                                                                                                         </title>
 
                                                                                                         <i
-                                                                                                            class="fa-solid fa-school"></i>
+                                                                                                            class="fa-solid fa-school" style="color:{{$categorys[$categorysIndex]->color}}"></i>
 
                                                                                                     </span> <span
-                                                                                                        class="elementskit-tab-title">COVID-19</span>
+                                                                                                        class="elementskit-tab-title">{{$categorys[$categorysIndex]->name}}</span>
                                                                                                 </a>
+                                                                                                
                                                                                             </li>
                                                                                         @endfor
 

@@ -20,11 +20,16 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('interface.index');
 });
+Route::get('/about', function () {
+    return view('interface.about');
+});
+
 
 Route::resource('/category', CategoryController::class);
 Route::resource('/role', RoleController::class);
 Route::resource('/user', UserController::class);
 Route::get('foundation', [CategoryController::class,'show_all_foundations'])->name('foundations.show');
+Route::get('certificate', [CategoryController::class,'show_certificate'])->name('certificate.show');
 
 
 
