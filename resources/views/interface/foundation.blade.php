@@ -556,7 +556,7 @@
                                                                                                         </title>
 
                                                                                                         <i
-                                                                                                            class="fa-solid fa-school" style="color:{{$categorys[$categorysIndex]->color}}"></i>
+                                                                                                            class="fa-solid {{$categorys[$categorysIndex]->icon}}" style="color:{{$categorys[$categorysIndex]->color}}"></i>
 
                                                                                                     </span> <span
                                                                                                         class="elementskit-tab-title">{{$categorys[$categorysIndex]->name}}</span>

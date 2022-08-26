@@ -25,9 +25,9 @@ class FoundationRequest extends FormRequest
     {
         return [
             'name'=>'required|string',
-            'Icon'=>'nullable',
-            'color'=>'nullable',
-            'Description'=>'string|max:255',
+            'icon'=>'required',
+            'color'=>'required',
+            'description'=>'string|max:255|required',
             'with_doses'=>'required'
         ];
     }

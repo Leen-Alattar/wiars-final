@@ -18,7 +18,19 @@
           </div>
           <div class="form-group">
             <label for="description">Icon</label>
-            <input type="text" class="form-control" name="icon">
+            <select name="icon" class="form-control">
+              <option value="fa-hospital"> Hospital </option>
+              <option value="fa-university"> University </option>
+              <option value="fa-school"> School</option>
+              <option value="fa-plane-arrival"> Airport</option>
+              <option value="fa-utensils ">Restaurant</option>
+              <option value="fa-industry-alt">Factories</option> 
+              <option value="fa-shopping-basket">Shops</option>
+              <option value="fa-mosque "> Mosque </option>
+              <option value="fa-coffee">Coffee Shop</option>
+              <option value="fa-dumbbell "> Sports clubs</option>
+
+          </select>
             <small class="text-danger">@error('icon')
                 <span>{{ $message }}</span>
             @enderror

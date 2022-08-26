@@ -113,7 +113,12 @@ class CategoryController extends Controller
     public function show_all_foundations(){
 
         $user = Auth::user();
+        $vacine_status=  $user->is_vaccine;
+        if($vacine_status == 1){
         $categorys = Category::all();
+        }else{
+            $categorys = Category::where('with_doses','=',0)->get();
+        }
         return view('interface.foundation', compact('categorys','user'));
     }
     public function show_certificate(){
