@@ -25,9 +25,9 @@ Route::get('/about', function () {
 });
 
 
-Route::resource('/category', CategoryController::class);
-Route::resource('/role', RoleController::class);
-Route::resource('/user', UserController::class);
+Route::resource('/category', CategoryController::class)->middleware('admin.auth');;
+Route::resource('/role', RoleController::class)->middleware('admin.auth');;
+Route::resource('/user', UserController::class)->middleware('admin.auth');;
 Route::get('foundation', [CategoryController::class,'show_all_foundations'])->name('foundations.show');
 Route::get('certificate', [CategoryController::class,'show_certificate'])->name('certificate.show');
 
